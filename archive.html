@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>归档 · 风云激变政经智库</title>
+<meta name="description" content="按日期、来源与角度检索全部稿件。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23101620'/%3E%3Ctext x='32' y='45' font-size='36' text-anchor='middle' fill='%23d9b878' font-family='serif'%3E风%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="archive">
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="风云激变政经智库 首页">
+      <span class="brand-mark">风</span>
+      <span class="brand-text">
+        <strong>风云激变政经智库</strong>
+        <em>FENGYUN · POLITICAL ECONOMY INTELLIGENCE</em>
+      </span>
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <a href="index.html">首页</a>
+      <a href="archive.html" class="is-active">归档</a>
+    </nav>
+    <div class="header-meta" id="headerMeta"></div>
+  </div>
+</header>
+
+<main>
+  <section class="page-head">
+    <div class="wrap">
+      <p class="hero-kicker dark"><span></span>ARCHIVE · 全部稿件</p>
+      <h1 class="page-title">归档</h1>
+      <p class="page-desc">按发布日期排列，逐日收录 <strong id="archiveTotal">—</strong> 篇稿件。可按角度筛选，或用关键词检索标题、事件与摘要。</p>
+    </div>
+  </section>
+
+  <section class="archive">
+    <div class="wrap archive-layout">
+      <aside class="date-rail" aria-label="日期导航">
+        <div class="rail-title">发布日</div>
+        <div class="rail-list" id="dateRail"></div>
+      </aside>
+
+      <div class="archive-main">
+        <div class="archive-tools">
+          <form class="archive-search" id="archiveSearch" role="search" autocomplete="off">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg>
+            <input type="search" id="archiveSearchInput" placeholder="搜索标题、事件、摘要…" aria-label="搜索归档">
+            <button type="button" class="clear-btn" id="searchClear" hidden>清除</button>
+          </form>
+          <div class="archive-filters">
+            <div class="filter-group" id="archiveAngleFilter"></div>
+          </div>
+        </div>
+
+        <div class="archive-result-meta" id="archiveResultMeta"></div>
+        <div id="archiveList" class="archive-list"></div>
+        <div class="empty-state" id="archiveEmpty" hidden>
+          <p>没有找到匹配的稿件</p>
+          <button class="btn-ghost" id="resetFilters">清空筛选条件</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <span class="brand-mark small">风</span>
+      <div>
+        <strong>风云激变政经智库</strong>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="data/index.js"></script>
+<script src="assets/js/vendor/marked.min.js"></script>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/source.js"></script>
+<script src="assets/js/zhiku.js"></script>
+<script src="assets/js/markdown.js"></script>
+<script src="assets/js/site.js"></script>
+</body>
+</html>
