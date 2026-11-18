@@ -138,7 +138,8 @@
         return { path: p, url: source.url(p), alt: alt };
       });
 
-      var id = (kind === "thought" ? "a-" : "b-") + (date || "own") + "-" + code;
+      var idPrefix = own ? "o-" : (kind === "thought" ? "a-" : "b-");
+      var id = idPrefix + (date || "own") + "-" + code;
       if (usedIds[id]) id = id + "-" + (usedIds[id] += 1);
       else usedIds[id] = 1;
 

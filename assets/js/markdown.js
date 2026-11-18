@@ -44,6 +44,16 @@
       .join("");
   }
 
+  /* 中文紧贴 ** 时，CommonMark 的 flanking 规则会导致加粗失效，
+     这里对 marked 输出做一次兜底：把残留的 **文字** 转成加粗，代码块内跳过 */
+  function fixCjkEmphasis(html) {
+    var parts = html.split(/(<pre[\s\S]*?<\/pre>|<code[\s\S]*?<\/code>)/i);
+    for (var i = 0; i < parts.length; i += 2) {
+      parts[i] = parts[i].replace(/\*\*([^*\n]+?)\*\*/g, "<strong>$1</strong>");
+    }
+    return parts.join("");
+  }
+
   function renderMarkdown(markdown, options) {
     var opts = options || {};
     var text = String(markdown || "").replace(/\r\n?/g, "\n");
@@ -53,7 +63,7 @@
       return fallback(text);
     }
 
-    var html = marked.parse(text);
+    var html = fixCjkEmphasis(marked.parse(text));
 
     // 独立图片段落 → figure（带图注）
     html = html.replace(/<p>\s*(<img\b[^>]*>)\s*<\/p>/g, function (_, img) {
